@@ -41,13 +41,10 @@ class GraphSelectionScenario(Scenario):
         '''
         self._shuffle()
         for prisioner in range(len(self.boxes)):
-            # print(self.boxes)
             next_attempt = prisioner
             found = False
-            for chance in range(self.number_of_chances):
-                temp = next_attempt
+            for _ in range(self.number_of_chances):
                 next_attempt = self._get_box(next_attempt)
-                # print(f'Prisioner {prisioner}: open box {temp} and found {next_attempt}')
                 if next_attempt == prisioner:
                     found = True
                     break
